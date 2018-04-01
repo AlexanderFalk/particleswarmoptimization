@@ -34,7 +34,11 @@
  *   LOCAL
  *   Er det her bedre end det var før? Sammenligner hvert step
  *
- *
+ * Individuals within the
+ * group interact to solve the global objective by exchanging locally available information,
+ * which in the end propagates through the entire group such that the problem is solved
+ * more efficiently than can be done by a single individual.
+
  *
  *
  * We throw in 25 bees and each bee will get a Z value that it has to search.
@@ -50,100 +54,7 @@
  */
 public class Main {
 
-    class Landscape {
-        double input; // X , Y
-        double output; // Z
 
-        public double getInput() {
-            return input;
-        }
-
-        public void setInput(double input) {
-            this.input = input;
-        }
-
-        public double getOutput() {
-            return output;
-        }
-
-        public void setOutput(double output) {
-            this.output = output;
-        }
-    }
-
-    class Bee {
-        double x, y, vx /*v = velocity*/, vy, z;
-        double inertia /*0-1*/, local /*0-1*/, global /*0-1*/;
-
-
-        public double getX() {
-            return x;
-        }
-
-        public void setX(double x) {
-            this.x = x;
-        }
-
-        public double getY() {
-            return y;
-        }
-
-        public void setY(double y) {
-            this.y = y;
-        }
-
-        public double getVx() {
-            return vx;
-        }
-
-        public void setVx(double vx) {
-            this.vx = vx;
-        }
-
-        public double getVy() {
-            return vy;
-        }
-
-        public void setVy(double vy) {
-            this.vy = vy;
-        }
-
-        public double getZ() {
-            return z;
-        }
-
-        public void setZ(double z) {
-            this.z = z;
-        }
-
-        public double getInertia() {
-            return inertia;
-        }
-
-        public void setInertia(double inertia) {
-            this.inertia = inertia;
-        }
-
-        public double getLocal() {
-            return local;
-        }
-
-        public void setLocal(double local) {
-            this.local = local;
-        }
-
-        public double getGlobal() {
-            return global;
-        }
-
-        public void setGlobal(double global) {
-            this.global = global;
-        }
-    }
-
-    public double distance(double max, double min, int x, int y) {
-
-    }
 
     public static void main(String[] args) {
 

@@ -1,7 +1,26 @@
 public class Particle {
-    private double x, y, vx /*v = velocity*/, vy, z;
-    private double inertia /*0-1*/, local /*0-1*/, global /*0-1*/;
 
+    int id;
+    double x, y, vx /*v = velocity*/, vy, z;
+    double local /*0-1*/, global /*0-1*/;
+
+    public static final double C1 = 1.49445; // Cognitive weight (particle best influence)
+    public static final double C2 = 1.49445; // Social weight (Swarm overall best influence)
+    public static final double w = 0.729; // Inertia weight
+
+    public Particle(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public double getX() {
         return x;
@@ -41,14 +60,6 @@ public class Particle {
 
     public void setZ(double z) {
         this.z = z;
-    }
-
-    public double getInertia() {
-        return inertia;
-    }
-
-    public void setInertia(double inertia) {
-        this.inertia = inertia;
     }
 
     public double getLocal() {

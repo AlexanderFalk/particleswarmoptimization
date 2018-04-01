@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
 /**
  * BEES
  * Ask landscape
@@ -54,9 +58,14 @@
  */
 public class Main {
 
-
-
     public static void main(String[] args) {
 
+        Swarm swarm = new Swarm();
+        Particle particle = new Particle(30.0, 9.0);
+        Landscape landscape = new Landscape(100.0, 100.0);
+        Vector<Particle> particleList = new Vector<>();
+        //swarm.addParticle(particle, particleList);
+        swarm.addToLandscape(particle, landscape);
+        //System.out.println("Output: " + landscape.getOutput());
     }
 }

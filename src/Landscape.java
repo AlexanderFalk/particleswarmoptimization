@@ -1,20 +1,26 @@
 public class Landscape {
-    double input; // X , Y
+    double x, y; // X , Y
     double output; // Z
 
-    public double getInput() {
-        return input;
+    public Landscape(double x, double y) {
+        this.x = x;
+        this.y = y;
     }
 
-    public void setInput(double input) {
-        this.input = input;
+    public double getX() {
+        return x;
     }
 
-    public double getOutput() {
-        return output;
+    public void setX(double x) {
+        this.x = x;
     }
 
-    public void setOutput(double output) {
-        this.output = output;
+    public double getY() {
+        return y;
     }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
 }

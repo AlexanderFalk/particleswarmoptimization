@@ -1,8 +1,8 @@
 public class Landscape {
-    double x, y; // X , Y
-    double output; // Z
+    private double x, y; // X , Y
+    private double output; // Z
 
-    public Landscape(double x, double y) {
+    Landscape(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -23,4 +23,12 @@ public class Landscape {
         this.y = y;
     }
 
+
+    public double getOutput() {
+        return output;
+    }
+
+    public void setOutput(double output) {
+        this.output = output;
+    }
 }

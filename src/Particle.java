@@ -1,18 +1,23 @@
 public class Particle {
 
-    int id;
-    double x, y, vx /*v = velocity*/, vy, z;
-    double local /*0-1*/, global /*0-1*/;
+    private int id;
+    private double local /*0-1*/, global /*0-1*/;
+    private Location location;
+    private Velocity velocity;
+    private double fitness;
 
-    public static final double C1 = 1.49445; // Cognitive weight (particle best influence)
-    public static final double C2 = 1.49445; // Social weight (Swarm overall best influence)
-    public static final double w = 0.729; // Inertia weight
-
-    public Particle(double x, double y) {
-        this.x = x;
-        this.y = y;
+    public Particle(Location location, Velocity velocity) {
+        this.location = location;
+        this.velocity = velocity;
     }
 
+    public void calculateBestPosition() {
+        double x = this.location.getLoc()[0];
+        double y = this.location.getLoc()[1];
+        fitness = Math.pow((2.8125 - x + x * Math.pow(y, 4)), 2) +
+                  Math.pow((2.25 - x + x * Math.pow(y, 2)), 2) +
+                  Math.pow((1.5 - x + x * y), 2);
+    }
 
     public int getId() {
         return id;
@@ -20,46 +25,6 @@ public class Particle {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
-
-    public double getVx() {
-        return vx;
-    }
-
-    public void setVx(double vx) {
-        this.vx = vx;
-    }
-
-    public double getVy() {
-        return vy;
-    }
-
-    public void setVy(double vy) {
-        this.vy = vy;
-    }
-
-    public double getZ() {
-        return z;
-    }
-
-    public void setZ(double z) {
-        this.z = z;
     }
 
     public double getLocal() {
@@ -77,4 +42,33 @@ public class Particle {
     public void setGlobal(double global) {
         this.global = global;
     }
+
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+
+    public Velocity getVelocity() {
+        return velocity;
+    }
+
+    public void setVelocity(Velocity velocity) {
+        this.velocity = velocity;
+    }
+
+    public double getFitness() {
+        calculateBestPosition();
+        return fitness;
+    }
+
+    public void setFitness(double fitness) {
+        this.fitness = fitness;
+    }
+
+
 }
